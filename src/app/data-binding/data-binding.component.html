@@ -1,8 +1,21 @@
-<div align="{{align}}">
+<div align="{{alignement}}">
   Personne: {{person}} | Age: {{age}} | Adresse: {{address.street}}, {{address.city}}
 </div>
 
 
-<div [align]="align" [ngStyle]="{color: couleur}" [appHighlight]="'green'">
+<div [align]="alignement" [ngStyle]="{color: couleur}" [appHighlight]="'green'">
   Personne: {{person}} | Age: {{age}} | Adresse: {{address.street}}, {{address.city}}
 </div>
+
+<app-comp1 [monAdresse]="address"></app-comp1>
+
+<button (click)="modifierPersonne()">Modifier Personne</button>
+<button (click)="annulerModification()">Annuler modification</button>
+
+<app-comp2 (counterChange)="myValueChange($event);"></app-comp2>
+
+<br>
+
+<h3>La valeur recuperée est : {{compteur}}</h3>
+
+<input [(ngModel)]="person">

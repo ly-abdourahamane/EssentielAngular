@@ -8,6 +8,9 @@ import {ChildComponent} from './child/child.component';
 import {CadreComponent} from './child/cadre/cadre.component';
 import {HighlightDirective} from './directive/highlight.directive';
 import {DataBindingComponent} from './data-binding/data-binding.component';
+import {Comp1Component} from './data-binding/comp1/comp1.component';
+import {Comp2Component} from './data-binding/comp2/comp2.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -16,11 +19,14 @@ import {DataBindingComponent} from './data-binding/data-binding.component';
     ChildComponent,
     CadreComponent,
     HighlightDirective,
-    DataBindingComponent
+    DataBindingComponent,
+    Comp1Component,
+    Comp2Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

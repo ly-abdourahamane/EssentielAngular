@@ -11,12 +11,26 @@ export class DataBindingComponent implements OnInit {
   age: number = 30;
   address: any = {street: 'rue du paradis', city: '3100 Toulouse'};
 
-  align: string = 'right';
+  alignement: string = 'right';
   couleur: string = 'red';
+
+  compteur: any = 'N/A';
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  modifierPersonne(): void {
+    this.person = 'Mamadou Dioubou LY';
+  }
+
+  annulerModification(): void {
+    this.person = 'John Doe';
+  }
+
+  myValueChange(event): void {
+    this.compteur = event.value;
   }
 
 }
