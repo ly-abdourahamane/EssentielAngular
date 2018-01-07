@@ -14,7 +14,6 @@ import {FormularComponent} from './formular/formular.component';
 import {AppRoutingModule} from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +24,7 @@ import { HomeComponent } from './home/home.component';
     Comp1Component,
     Comp2Component,
     FormularComponent,
-    HomeComponent,
-
+    HomeComponent
   ],
   imports: [
     BrowserModule,

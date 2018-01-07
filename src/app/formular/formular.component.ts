@@ -1,7 +1,7 @@
 import {Component, Injectable, OnChanges} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DialogueService} from '../services/dialogue.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, UrlSegment} from '@angular/router';
 
 @Component({
   selector: 'app-formular',
@@ -17,13 +17,22 @@ export class FormularComponent implements OnChanges {
 
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
-              private dialogService: DialogueService) {
-    this.createForm();
+              private dialogService: DialogueService,
+              private activatedRoute: ActivatedRoute) {
+      this.createForm();
 
-    this.message = route.snapshot.data['message'];
+      this.message = route.snapshot.data['message'];
 
-    console.log(this.message);
-  }
+      console.log(this.message);
+
+      this.activatedRoute.url.subscribe((s: UrlSegment[]) => {
+        console.log('url :' + s);
+      });
+
+    this.activatedRoute.params.subscribe(p => {
+      console.log('params :' + p);
+    });
+    }
 
   ngOnChanges() {
     this.myForm.reset({});

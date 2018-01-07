@@ -18,12 +18,15 @@ const routes: Routes = [
   {
     path: 'form', component: FormularComponent,  canActivate: [AuthGuard],
     resolve: {message: MessageResolverService}
-  },
+  }
 
 ];
 
+// useHash: booléen activant la navigation avec des hash (#) au lieu de l'API history
+// enableTracing: permet de savoir ce qui se passe à l'interieur du root.
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,
+    {useHash: true, enableTracing: false, initialNavigation: true})],
   exports: [RouterModule],
   providers: [AuthGuard, CanDeactivateGuard, MessageResolverService, DialogueService]
 })

@@ -7,7 +7,7 @@ export class MessageResolverService implements Resolve<String> {
   constructor() { }
 
   //on sumule un traitement
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<String> | boolean {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<String> | String {
     return new Promise(function (resolve, reject) {
       setTimeout(function () {
         resolve('Message resolver');
