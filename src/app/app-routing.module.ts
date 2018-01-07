@@ -7,6 +7,7 @@ import {HomeComponent} from './home/home.component';
 import {CanDeactivateGuard} from './guard/can-deactivate.guard';
 import {MessageResolverService} from './services/resolver/message-resolver.service';
 import {DialogueService} from './services/dialogue.service';
+import {CommunicationCompComponent} from './communication-comp/communication-comp.component';
 
 const routes: Routes = [
 
@@ -18,7 +19,9 @@ const routes: Routes = [
   {
     path: 'form', component: FormularComponent,  canActivate: [AuthGuard],
     resolve: {message: MessageResolverService}
-  }
+  },
+
+  {path: 'communication', component: CommunicationCompComponent}
 
 ];
 

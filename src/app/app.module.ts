@@ -13,6 +13,8 @@ import {FormularComponent} from './formular/formular.component';
 
 import {AppRoutingModule} from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { PersonneComponent } from './communication-comp/personne/personne.component';
+import {CommunicationCompComponent} from './communication-comp/communication-comp.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HomeComponent } from './home/home.component';
     Comp1Component,
     Comp2Component,
     FormularComponent,
-    HomeComponent
+    HomeComponent,
+    PersonneComponent,
+    CommunicationCompComponent
   ],
   imports: [
     BrowserModule,
