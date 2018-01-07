@@ -19,6 +19,7 @@ export class DataBindingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('data binding');
   }
 
   modifierPersonne(): void {

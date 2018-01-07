@@ -1,0 +1,41 @@
+<br>
+<br>
+<hr>
+<br>
+<form [formGroup]="myForm" novalidate
+      (ngSubmit)="creerUtilisateur()">
+
+  <input type="text" placeholder="Name"
+         required maxlength="25" formControlName="nom"
+         [(ngModel)]="personne.nom">
+
+  <input type="text" placeholder="Prenom"
+         required maxlength="25" formControlName="prenom"
+         [(ngModel)]="personne.prenom">
+
+  <input type="text" placeholder="Mail"
+         required maxlength="25" formControlName="mail"
+         [(ngModel)]="personne.mail">
+
+  <input type="text" placeholder="Sexe"
+         required maxlength="25" formControlName="sexe"
+         [(ngModel)]="personne.sexe">
+
+  <input type="text" placeholder="Ville"
+         required maxlength="25" formControlName="ville"
+         [(ngModel)]="personne.ville">
+
+  <input type="text" placeholder="Date de naissance"
+         required maxlength="25" formControlName="dateNaissance"
+         [(ngModel)]="personne.dateNaissance">
+
+  <button type="submit">Submit</button>
+</form>
+
+<hr>
+<label>Données saisies: </label>
+{{diagnostic}}
+
+<br>
+<br>
+<label>{{message}}</label>
