@@ -16,6 +16,10 @@ import { HomeComponent } from './home/home.component';
 import { PersonneComponent } from './communication-comp/personne/personne.component';
 import {CommunicationCompComponent} from './communication-comp/communication-comp.component';
 
+// Angular material
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatInputModule} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +38,12 @@ import {CommunicationCompComponent} from './communication-comp/communication-com
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    // Angular material
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
