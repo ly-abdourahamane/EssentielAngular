@@ -19,6 +19,7 @@ import {CommunicationCompComponent} from './communication-comp/communication-com
 // Angular material
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatInputModule} from '@angular/material';
+import { CarViewChildComponent } from './communication-comp/car-view-child/car-view-child.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatButtonModule, MatInputModule} from '@angular/material';
     FormularComponent,
     HomeComponent,
     PersonneComponent,
-    CommunicationCompComponent
+    CommunicationCompComponent,
+    CarViewChildComponent
   ],
   imports: [
     BrowserModule,

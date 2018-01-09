@@ -1,3 +1,26 @@
-<div>
-  <app-personne [personne] = "_character" *ngFor="let _character of characters"></app-personne>
+<div *ngIf="disable">
+  <h1>
+    Votre personnage préféré est : {{theBest.name + ' ' + theBest.lastName}}
+  </h1>
 </div>
+
+<div>
+  <app-personne [personne]="_character" *ngFor="let _character of characters"
+                [disable]="disable" (onChoose)="isElected($event)" #pers>
+  </app-personne>
+</div>
+
+<h1>Car avec le decorateur ViewChild</h1>
+<app-car-view-child></app-car-view-child>
+
+
+<div>
+  <button mat-raised-button color="primary" (click)="clignotant()">Clignotant</button>
+  <button mat-raised-button color="accent" (click)="porte()">Porte</button>
+</div>
+
+<h1 [ngClass]="{color: blue}">Colorisation avec le decorateur ViewChildren</h1>
+
+<button mat-fab color="warn" (click)="color()">Coloriser</button>
+
+

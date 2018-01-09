@@ -21,7 +21,7 @@ const routes: Routes = [
     resolve: {message: MessageResolverService}
   },
 
-  {path: 'communication', component: CommunicationCompComponent}
+  {path: 'communication', component: CommunicationCompComponent},
 
 ];
 

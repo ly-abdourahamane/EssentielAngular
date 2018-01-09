@@ -1,1 +1,8 @@
-<h1>{{_personne.name}} {{_personne.lastName}}</h1>
+
+<div *ngIf="!disable" [ngClass]="{'color': color}">
+
+  <h1> {{personne.name}} {{personne.lastName}}</h1>
+  <hr>
+  <button mat-raised-button color="primary" (click)="choose()">Choisir</button>
+
+</div>
