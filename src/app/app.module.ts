@@ -20,7 +20,9 @@ import {GitHubComponent} from './requettes-http/git-hub/git-hub.component';
 
 // Angular material
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatInputModule, MatListModule} from '@angular/material';
+import { PipePipe } from './pipe/pipe.pipe';
+import { PipeComponent } from './pipe/pipe/pipe.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import {MatButtonModule, MatInputModule} from '@angular/material';
     PersonneComponent,
     CommunicationCompComponent,
     CarViewChildComponent,
-    GitHubComponent
+    GitHubComponent,
+    PipePipe,
+    PipeComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,8 @@ import {MatButtonModule, MatInputModule} from '@angular/material';
     // Angular material
     BrowserAnimationsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

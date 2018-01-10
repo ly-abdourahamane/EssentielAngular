@@ -8,6 +8,8 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
 
+  app = 'title';
+
   constructor(router: Router) {
     //router.navigateByUrl('/form');
   }

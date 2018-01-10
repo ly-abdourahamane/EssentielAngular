@@ -10,6 +10,7 @@ import {DialogueService} from './services/dialogue.service';
 import {CommunicationCompComponent} from './communication-comp/communication-comp.component';
 import {GitHubComponent} from './requettes-http/git-hub/git-hub.component';
 import {GitHubService} from './services/git-hub.service';
+import {PipeComponent} from './pipe/pipe/pipe.component';
 
 const routes: Routes = [
 
@@ -25,7 +26,9 @@ const routes: Routes = [
 
   {path: 'communication', component: CommunicationCompComponent},
 
-  {path: 'github', component: GitHubComponent, canActivate: [AuthGuard]}
+  {path: 'github', component: GitHubComponent, canActivate: [AuthGuard], children: [
+      {path: 'pipe', component: PipeComponent}
+    ]}
 
 ];
 
