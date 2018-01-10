@@ -17,6 +17,7 @@ export class CommunicationCompComponent implements OnInit {
 
   disable = false;
   theBest: any;
+  color_ = 'blue';
 
   @ViewChild(CarViewChildComponent) car: CarViewChildComponent;
   @ViewChildren(PersonneComponent) private personneComponents: QueryList<PersonneComponent>;

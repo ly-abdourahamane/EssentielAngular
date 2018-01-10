@@ -8,6 +8,8 @@ import {CanDeactivateGuard} from './guard/can-deactivate.guard';
 import {MessageResolverService} from './services/resolver/message-resolver.service';
 import {DialogueService} from './services/dialogue.service';
 import {CommunicationCompComponent} from './communication-comp/communication-comp.component';
+import {GitHubComponent} from './requettes-http/git-hub/git-hub.component';
+import {GitHubService} from './services/git-hub.service';
 
 const routes: Routes = [
 
@@ -23,6 +25,8 @@ const routes: Routes = [
 
   {path: 'communication', component: CommunicationCompComponent},
 
+  {path: 'github', component: GitHubComponent, canActivate: [AuthGuard]}
+
 ];
 
 // useHash: booléen activant la navigation avec des hash (#) au lieu de l'API history
@@ -31,6 +35,12 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes,
     {useHash: true, enableTracing: false, initialNavigation: true})],
   exports: [RouterModule],
-  providers: [AuthGuard, CanDeactivateGuard, MessageResolverService, DialogueService]
+  providers: [
+    AuthGuard,
+    CanDeactivateGuard,
+    MessageResolverService,
+    DialogueService,
+    GitHubService
+  ]
 })
 export class AppRoutingModule { }

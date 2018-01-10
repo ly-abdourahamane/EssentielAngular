@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarViewChildComponent implements OnInit {
 
-  private _haut = false;
-  private _bas = false;
-  private _gauche = false;
-  private _droite = false;
+  _haut = false;
+  _bas = false;
+  _gauche = false;
+  _droite = false;
 
   constructor() { }
 
