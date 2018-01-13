@@ -34,8 +34,129 @@
 
 <hr>
 <label>Données saisies: </label>
-{{diagnostic}}
+{{diagnosticForm}}
 
 <br>
 <br>
 <label>{{message}}</label>
+
+
+<div [ngStyle]="{'color':'blue'}"><h1>MEILLEUR FAÇON DE FAIRE UN FORMULAIRE CLASSIQUE</h1></div>
+
+<div class="container">
+  <form [formGroup]="personForm">
+
+    <fieldset>
+      <legend>Formulaire Personne</legend>
+      <!--LES GENRES-->
+      <div class="form-group">
+        <label class="control-lablel">Genre: </label>
+        <label for="male" class="radio-inline">
+          <input type="radio" id="male" value="1" formControlName="gender">Masculin
+        </label>
+        <label for="female" class="radio-inline">
+          <input type="radio" id="female" value="0" formControlName="gender">Féminin
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Nom: </label>
+          <input type="text" class="form-control" id="lastName" formControlName="lastName">
+          <div *ngIf="formErrors.lastName" class="alert alert-danger">{{formErrors.lastName}}</div>
+      </div>
+
+      <div class="form-group">
+        <label for="firstName">Prénom: </label>
+        <input type="text" class="form-control" id="firstName" formControlName="firstName">
+        <div *ngIf="formErrors.firstName" class="alert alert-danger">{{formErrors.firstName}}</div>
+      </div>
+
+      <div class="form-group">
+        <label for="favoriteColor">Couleur favorite: </label>
+        <select class="form-control" id="favoriteColor" formControlName="favoriteColor">
+          <option *ngFor="let color of favoriteColor" [value]="color">{{color}}</option>
+        </select>
+        <div *ngIf="formErrors.favoriteColor" class="alert alert-danger">{{formErrors.favoriteColor}}</div>
+      </div>
+
+      <div class="form-group">
+        <label for="birthday">Birthday: </label>
+        <input type="text" class="form-control" id="birthday" formControlName="birthday">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email: </label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+      </div>
+
+      <mat-form-field>
+        <input matInput placeholder="Input">
+      </mat-form-field>
+
+      <mat-form-field>
+        <textarea matInput placeholder="Textarea"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Select">
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </fieldset>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="!personForm.valid">Soumettre</button>
+    <button type="reset" mat-raised-button color="warn">Effacer</button>
+  </form>
+</div>
+
+
+{{diagnosticPerson}}
+
+
+
+<div [ngStyle]="{'color':'cadetblue'}"><h1>FORMULAIRE AVEC ANGULAR MATERIAL</h1></div>
+
+<div class="container">
+  <form [formGroup]="personMaterialForm">
+
+    <fieldset>
+      <legend>Formulaire Personne</legend>
+      <!--LES GENRES-->
+        <mat-radio-group class="example-radio-group">
+          <mat-radio-button formControlName="gender_" value="1">Homme</mat-radio-button>
+          <mat-radio-button formControlName="gender_" value="0">Femme</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field>
+          <input matInput placeholder="Nom" formControlName="name_" >
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Prénom" formControlName="prenom_" >
+        </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Select" formControlName="favoriteColor_">
+          <mat-option *ngFor="let color of favoriteColor" [value]="color">
+            {{color}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Birthday" formControlName="birthday_">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email_">
+      </mat-form-field>
+
+    </fieldset>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="!personMaterialForm.valid">Soumettre</button>
+    <button type="reset" mat-raised-button color="warn">Effacer</button>
+  </form>
+</div>
+
+

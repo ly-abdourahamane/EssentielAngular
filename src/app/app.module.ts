@@ -20,7 +20,14 @@ import {GitHubComponent} from './requettes-http/git-hub/git-hub.component';
 
 // Angular material
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatInputModule, MatListModule} from '@angular/material';
+import {
+  MatButtonModule, MatCheckboxModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatListModule, MatOptionModule, MatRadioModule,
+  MatSelectModule,
+
+} from '@angular/material';
 import { PipePipe } from './pipe/pipe.pipe';
 import { PipeComponent } from './pipe/pipe/pipe.component';
 
@@ -53,7 +60,12 @@ import { PipeComponent } from './pipe/pipe/pipe.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
