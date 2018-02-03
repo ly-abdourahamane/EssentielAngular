@@ -30,6 +30,7 @@ import {
 } from '@angular/material';
 import { PipePipe } from './pipe/pipe.pipe';
 import { PipeComponent } from './pipe/pipe/pipe.component';
+import { GenericAppComponent } from './generic-app/generic-app.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { PipeComponent } from './pipe/pipe/pipe.component';
     GitHubComponent,
     PipePipe,
     PipeComponent,
+    GenericAppComponent,
   ],
   imports: [
     BrowserModule,

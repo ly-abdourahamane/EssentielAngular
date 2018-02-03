@@ -1,0 +1,29 @@
+<div class="container color-dark">
+  <div [@goals]="goals.length">
+
+    <form class="example-form" [formGroup]="myForm" novalidate (ngSubmit)="onSubmit()">
+
+      <mat-form-field class="example-full-width">
+        <input matInput name="value" formControlName="nom" placeholder="Saisir ici" value="val init"
+               [(ngModel)]="value">
+      </mat-form-field>
+
+      <button type="submit" mat-raised-button color="primary" [disabled]="!myForm.valid">
+        Ajouter
+      </button>
+
+    </form>
+
+    <div class="col">
+      <p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
+        {{goal}}
+      </p>
+    </div>
+  </div>
+</div>
+
+<p>
+  <a href="" routerLink="/data-binding">
+    <strong>Go data binding</strong>
+  </a>
+</p>

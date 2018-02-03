@@ -2,7 +2,16 @@
 <router-outlet></router-outlet>
 -->
 
-<div class="content"
+<div class="content"><router-outlet></router-outlet>
+</div>
+
+<!--<div class="content"
      [@routerTransition]="o.isActivated && o.activatedRoute.routeConfig.path">
   <router-outlet #o="outlet"></router-outlet>
+</div>-->
+
+<div *ngIf="entreprise">
+  <h1>Entreprise</h1>
+  <label>id: {{entreprise.id}}</label>
+  <label>nom: {{entreprise.nom}}</label>
 </div>

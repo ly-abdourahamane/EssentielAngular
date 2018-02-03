@@ -11,6 +11,8 @@ import {CommunicationCompComponent} from './communication-comp/communication-com
 import {GitHubComponent} from './requettes-http/git-hub/git-hub.component';
 import {GitHubService} from './services/git-hub.service';
 import {PipeComponent} from './pipe/pipe/pipe.component';
+import {GenericAppComponent} from './generic-app/generic-app.component';
+import {GenericAppService} from './services/generic/generic-app.service';
 
 const routes: Routes = [
 
@@ -28,7 +30,9 @@ const routes: Routes = [
 
   {path: 'github', component: GitHubComponent, canActivate: [AuthGuard], children: [
       {path: 'pipe', component: PipeComponent}
-    ]}
+    ]},
+
+  {path: 'generic', component: GenericAppComponent}
 
 ];
 
@@ -36,14 +40,15 @@ const routes: Routes = [
 // enableTracing: permet de savoir ce qui se passe à l'interieur du root.
 @NgModule({
   imports: [RouterModule.forRoot(routes,
-    {useHash: true, enableTracing: false, initialNavigation: true})],
+    {useHash: false, enableTracing: false, initialNavigation: true})],
   exports: [RouterModule],
   providers: [
     AuthGuard,
     CanDeactivateGuard,
     MessageResolverService,
     DialogueService,
-    GitHubService
+    GitHubService,
+    GenericAppService
   ]
 })
 export class AppRoutingModule { }

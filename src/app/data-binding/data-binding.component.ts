@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GenericAppService} from '../services/generic/generic-app.service';
 
 @Component({
   selector: 'app-data-binding',
@@ -16,10 +17,13 @@ export class DataBindingComponent implements OnInit {
 
   compteur: any = 'N/A';
 
-  constructor() { }
+  goals: any;
+
+  constructor( private _genericService: GenericAppService) { }
 
   ngOnInit() {
     console.log('data binding');
+    this._genericService.goal.subscribe(res => this.goals = res);
   }
 
   modifierPersonne(): void {
