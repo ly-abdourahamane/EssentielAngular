@@ -25,6 +25,7 @@ export class CommunicationCompComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('communication');
   }
 
   public isElected(personne: any): void {

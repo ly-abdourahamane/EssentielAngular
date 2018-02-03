@@ -38,14 +38,24 @@ export class GenericAppComponent implements OnInit {
   value: string;
   myForm: FormGroup;
 
+  continents: any;
+
   constructor(@Inject(FormBuilder) private formBuilder: FormBuilder,
               private _genericService: GenericAppService) { }
 
   ngOnInit() {
     this.createForm();
     this._genericService.goal.subscribe(res => this.goals = res);
-
     this._genericService.changeGoal(this.goals);
+
+    this._genericService.continents.subscribe(res => this.continents = res);
+
+    this._genericService.getContinents().subscribe(res => {
+      console.log(res);
+      this.continents = res;
+    });
+
+    this._genericService.changeContinents(this.continents);
   }
 
   createForm(): void {
@@ -68,6 +78,11 @@ export class GenericAppComponent implements OnInit {
   removeItem(i) {
     this.goals.splice(i, 1);
     this._genericService.changeGoal(this.goals);
+  }
+
+  removeContinent(i) {
+    this.continents.splice(i, 1);
+    this._genericService.changeContinents(this.continents);
   }
 
 }

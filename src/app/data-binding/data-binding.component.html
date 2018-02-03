@@ -9,8 +9,15 @@
 
 <app-comp1 [monAdresse]="address"></app-comp1>
 
-<button (click)="modifierPersonne()">Modifier Personne</button>
-<button (click)="annulerModification()">Annuler modification</button>
+<button type="submit" mat-raised-button color="primary" (click)="modifierPersonne()" >
+  Modifier Personne
+</button>
+
+<button type="submit" mat-raised-button color="primary" (click)="annulerModification()">
+  Annuler modification
+</button>
+
+
 
 <app-comp2 (counterChange)="myValueChange($event);"></app-comp2>
 
@@ -18,7 +25,9 @@
 
 <h3>La valeur recuperée est : {{compteur}}</h3>
 
-<input [(ngModel)]="person">
+<mat-form-field class="example-full-width">
+<input matInput name="value" placeholder="Person" value="" [(ngModel)]="person">
+</mat-form-field>
 
 <h2>Service testing</h2>
 <ul>

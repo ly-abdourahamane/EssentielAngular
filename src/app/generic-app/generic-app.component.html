@@ -1,6 +1,20 @@
 <div class="container color-dark">
-  <div [@goals]="goals.length">
+  <div class="col">
 
+  </div>
+  <div class="col">
+    <p>List des items</p>
+  </div>
+  <div class="col">
+    <p>Nombre d'élements de la liste {{goals.length}} </p>
+  </div>
+</div>
+
+<div class="container color-light">
+
+  <div class="col"></div>
+
+  <div class="col">
     <form class="example-form" [formGroup]="myForm" novalidate (ngSubmit)="onSubmit()">
 
       <mat-form-field class="example-full-width">
@@ -11,19 +25,30 @@
       <button type="submit" mat-raised-button color="primary" [disabled]="!myForm.valid">
         Ajouter
       </button>
-
     </form>
+  </div>
 
+  <div [@goals]="goals.length">
     <div class="col">
       <p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
         {{goal}}
       </p>
     </div>
   </div>
+
 </div>
 
-<p>
-  <a href="" routerLink="/data-binding">
-    <strong>Go data binding</strong>
-  </a>
-</p>
+<hr><hr>
+
+<div class="container color-dark">
+  <div class="col"> <p></p></div>
+  <div class="col"> <p>Liste des continents</p></div>
+</div>
+<div class="container panel-continents" [@goals]="continents.length">
+  <div class="col">
+    <p class="life-container" *ngFor="let continent of continents; let i = index"
+       (click)="removeContinent(i)">
+      {{ continent.nom }}
+    </p>
+  </div>
+</div>
