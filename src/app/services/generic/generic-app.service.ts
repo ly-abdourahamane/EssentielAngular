@@ -30,7 +30,7 @@ export class GenericAppService {
   }
 
   getContinents(): any {
-    return this.http.get<any>(apiUrl.environment.API_URL + 'continents');
+    return this.http.get<any>(apiUrl.environment.API_URL + 'entreprises');
   }
 
   getPays(): any {
