@@ -122,6 +122,8 @@ export class FormularComponent implements OnChanges, OnInit {
   }
 
   onVlueChanged(data?: any): void {
+
+    
      const form = this.personForm.controls;
      for (const field in this.personForm.controls) {
 

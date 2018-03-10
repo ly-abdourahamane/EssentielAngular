@@ -8,7 +8,7 @@ import {GenericAppService} from '../services/generic/generic-app.service';
 })
 export class DataBindingComponent implements OnInit {
 
-  person: string = 'John Doe';
+  person: string = 'DUPONT DUPONT';
   age: number = 30;
   address: any = {street: 'rue du paradis', city: '3100 Toulouse'};
 
@@ -27,7 +27,7 @@ export class DataBindingComponent implements OnInit {
   }
 
   modifierPersonne(): void {
-    this.person = 'Mamadou Dioubou LY';
+    this.person = 'Dupont Dupont';
   }
 
   annulerModification(): void {

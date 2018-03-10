@@ -31,6 +31,9 @@ import {
 import { PipePipe } from './pipe/pipe.pipe';
 import { PipeComponent } from './pipe/pipe/pipe.component';
 import { GenericAppComponent } from './generic-app/generic-app.component';
+import {DataAccessService} from './country/data-access.service';
+import {TOKENS_PROVIDERS} from './country/countries.tokens';
+import { CountryComponent } from './country/country.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,7 @@ import { GenericAppComponent } from './generic-app/generic-app.component';
     PipePipe,
     PipeComponent,
     GenericAppComponent,
+    CountryComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,9 @@ import { GenericAppComponent } from './generic-app/generic-app.component';
     MatCheckboxModule,
     MatRadioModule
   ],
-  providers: [],
+  providers: [
+    ...TOKENS_PROVIDERS,
+    DataAccessService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

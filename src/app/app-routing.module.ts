@@ -13,28 +13,29 @@ import {GitHubService} from './services/git-hub.service';
 import {PipeComponent} from './pipe/pipe/pipe.component';
 import {GenericAppComponent} from './generic-app/generic-app.component';
 import {GenericAppService} from './services/generic/generic-app.service';
+import {CountryComponent} from './country/country.component';
 
 const routes: Routes = [
 
-  {path: '', pathMatch: 'full', redirectTo: '/', canActivate: [AuthGuard]},
+  {path: '', pathMatch: 'full', redirectTo: '/', canActivate: [AuthGuard], data: {title: 'Accueil'}},
 
+  {path: 'country', component: CountryComponent},
 
   {path: '', component: HomeComponent, canActivate: [AuthGuard]},
-  {path: 'data-binding', component: DataBindingComponent, canActivate: [AuthGuard]},
+  {path: 'data-binding', component: DataBindingComponent, canActivate: [AuthGuard], data: {title: 'Data binding'}},
   {
-    path: 'form', component: FormularComponent,  canActivate: [AuthGuard],
-    resolve: {message: MessageResolverService}
+    path: 'form', component: FormularComponent,  canActivate: [AuthGuard], data: {title: 'Formulaire'},
+      resolve: {message: MessageResolverService}
   },
 
   {path: 'communication', component: CommunicationCompComponent},
 
   {path: 'github', component: GitHubComponent, canActivate: [AuthGuard], children: [
-      {path: 'pipe', component: PipeComponent}
+      {path: 'pipe', component: PipeComponent, data: {title: 'Pipe'}}
     ]},
 
-  {path: 'generic', component: GenericAppComponent}
-
-];
+  {path: 'generic', component: GenericAppComponent, data: {title: 'Generic'}}
+  ];
 
 // useHash: booléen activant la navigation avec des hash (#) au lieu de l'API history
 // enableTracing: permet de savoir ce qui se passe à l'interieur du root.
